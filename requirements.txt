@@ -1,0 +1,5 @@
+validate-docbr==1.10.0
+SQLAlchemy==1.4.19
+python-dotenv==0.19.2
+PyMySQL==1.0.2
+cryptography==3.4.7
