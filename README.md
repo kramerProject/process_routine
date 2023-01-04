@@ -61,9 +61,10 @@ use teste;
 ```
 ```
 select * from purchases;
-`
+```
 
 # Tests
+
 if your not on container RUN
 ```
 docker exec -it process_routine bash
