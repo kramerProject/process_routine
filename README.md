@@ -18,64 +18,30 @@ You should have docker and docker-compose installed
 1. Clone repo:
 
 ```
-git clone git@github.com:kramerProject/candidate_scraper.git
+git clone git@github.com:kramerProject/process_routine.git
 
-cd candidate_scraper
+cd process_routine
 ```
 
 
-2. Criar e ativar um ambiente virtual e instalar as dependências do projeto:
+2. Build the container:
 
 ```
-python3 -m venv .venv
-
-source .venv/bin/activate
-
-pip3 install scrapy mysql-connector-python
+make image
 ```
 
-3. Configurar variáveis de ambiente
+3. Get inside the container
 
 ```
-export MYSQL_USER='seu user name'
-
-export MYSQL_PASSWORD='sua senha_mysql'
-
-export MYSQL_HOST=localhost
+docker exec -it process_routine bash
 ```
 
-4. Criar o banco de dados mysql
+4. Start the app
 
 ```
-DROP DATABASE IF EXISTS candidates;
-
-CREATE DATABASE IF NOT EXISTS candidates;
+python3 ./src/app.py
 ```
-5. Rodar o serviço
-
-```
-cd src
-
-scrapy crawl ap
-```
-
-# Testes
-
-```
-python -m unittest tests/test_scraper.py
-```
-# Resultados
-
-- Tempo do serviço: 34 minutos
-- 46.707 itens salvos no banco de dados
-
-![image Info](src/assets/scraper_stats.png "stats")
-
-
-
-
-
-# Rodar o mysql
+5. Check data on the database
 
 ```
 docker exec -it mysqldb bash
@@ -84,7 +50,7 @@ docker exec -it mysqldb bash
 mysql -uroot -p
 ```
 ```
-digitar o password
+type the password
 ```
 ```
 show databases;
@@ -95,4 +61,11 @@ use teste
 ```
 ```
 select * from purchases;
+`
+
+# Tests
+
+```
+cd src
+python -m unittest parser_tests.py
 ```
