@@ -1,6 +1,6 @@
 # Objective
 
-Extract data from a txt file containing purchase information concerning a fictious store. After data is parsed and valid It should be persisted in a sql data base.
+Extract data from a txt file containing purchase information concerning a fictious store. After data is parsed and validated It should be persisted in a sql data base.
 
 # Requirements
 
@@ -11,9 +11,9 @@ Extract data from a txt file containing purchase information concerning a fictio
 - [X] Persist in a sql data base
 
 
-# Instructions 
+# Instructions
 
-You should have docker and docker-compose installed
+In order to run the app you should have (docker)[https://www.docker.com/] and (docker-compose)[https://docs.docker.com/compose/install/] installed
 
 1. Clone repo:
 
@@ -57,14 +57,18 @@ show databases;
 ```
 
 ```
-use teste
+use teste;
 ```
 ```
 select * from purchases;
 `
 
 # Tests
-
+if your not on container RUN
+```
+docker exec -it process_routine bash
+```
+then RUN
 ```
 cd src
 python -m unittest parser_tests.py
