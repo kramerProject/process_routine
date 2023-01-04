@@ -13,7 +13,7 @@ Extract data from a txt file containing purchase information concerning a fictio
 
 # Instructions
 
-In order to run the app you should have (docker)[https://www.docker.com/] and (docker-compose)[https://docs.docker.com/compose/install/] installed
+In order to run the app you should have [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/install/) installed
 
 1. Clone repo:
 
